@@ -1,0 +1,16 @@
+{% extends 'globus-portal-framework/v2/base.html' %}
+
+
+{% block body %}
+
+<div class="jumbotron">
+    <h1 class="display-4">My Flow Portal</h1>
+    <p class="lead">This is a tiny portal used to show starting flows using DGPF</p>
+    <hr class="my-4">
+    <p>Use the following button to login and begin starting flows!</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="/login/globus?next={% url 'hello-flow' %}" role="button">Begin</a>
+    </p>
+  </div>
+
+  {% endblock %}

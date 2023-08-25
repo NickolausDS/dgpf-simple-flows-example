@@ -1,0 +1,35 @@
+{% extends 'globus-portal-framework/v2/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block body %}
+
+<div class="row">
+    <div class="col">
+      <h2 class="text-center">{{project_title}}</h2>
+    </div>
+  </div>
+  
+  <div class="row mb-5">
+    <div class="col"></div>
+    <div class="col-10">
+      <div>
+        <h1 class="text-center">{%block checkout_title%}Start your Flow{%endblock%}</h1>
+        <div class="card">
+          <div class="card-body">
+
+            <form method="post" action="{% url 'hello-flow' %}">
+              {% csrf_token %}
+              {{ form|crispy }}
+              <button type="submit" class="btn mb-2 btn-primary">Start Flow</button>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+
+
+{% endblock %} 
