@@ -114,12 +114,11 @@ if not FLOW_ID:
         "Please set FLOW_ID in your settings.py. Find your flow id by running create_flow.py"
     )
 # This dictates which scopes will be requested on each user login
-FLOW_SCOPE_NAME = f"flow_{FLOW_ID.replace('-', '_')}_user"
 SOCIAL_AUTH_GLOBUS_SCOPE = [
     "openid",
     "profile",
     "email",
-    globus_sdk.SpecificFlowClient(FLOW_ID).scopes.url_scope_string(FLOW_SCOPE_NAME),
+    globus_sdk.SpecificFlowClient(FLOW_ID).scopes.user,
 ]
 
 LOGGING = {
